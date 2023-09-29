@@ -1,33 +1,16 @@
+import math
+#-------------Escape Sequences-------------------------
 
-# def myFunction(input,x):
-#     print("my function")
-#     print(input)
+print("Hello World\n")
+print("Hello\tWorld")
+print("Hello\bWorld")
+print("Hello\rWorld")
+print("Hello\fWorld")
+print("Hello\'World")
+print("Hello\"World")
+print("Hello\\World")
 
-# print("hey")
-
-# list = [1,2,3,4]
-
-# print(list[0])
-
-# print(list[1])
-
-#len(list) comments are #
-
-print("hello\tworld")
-print("hello\b3world")
-
-
-# myFunction("hello", 1)
-
-# for i in range(0,list[3]):
-#     print(i)
-
-
-
-#-----------------------------------------------
-#printing variables
-
-
+#------------variables------------------
 
 age = 24
 # int age = 21; in Java 
@@ -38,10 +21,10 @@ float_test = 1.2
 name = "John"
 # String name = "John"; in Java
 
-print(f"\nhey my name is {name} and im {age} years old\n") # f string
-
 state = True
 # boolean state = True; in Java
+
+print(f"\nHey my name is {name} and im {age} years old\n") # f string
 
 if state == True:
     print("state is true")
@@ -49,14 +32,12 @@ if state == True:
 
 # not = ! in Java
 
-#-----------------------------------------------
-# multiple assignments
+#---------------multiple assignments------------------
 
 a,b,c = 1,2,3
 print(a,b,c)
 
-#-----------------------------------------------
-
+#--------------else if statements----------------
 
 print(type(age))  # says the type of the variable
 
@@ -73,5 +54,59 @@ elif age == 21:
 else:
     print("you can't drink")
 
-
 #print(21 + 23 + "hello")  doesnt work
+
+#---------------user input---------------------
+# user input is always string so it should be casted to int or float if needed
+
+name = input("what is your name? ")
+
+print(f"hello {name}")
+
+# it can be both ways , 1- with typing the question in the input() and 2- with print() and input() seperately
+
+print("what is your age? ")
+age = input()
+
+print(age)
+
+#---------Math--------------------
+#library math
+
+number = 25 
+
+number = number ** 2 #power
+number = pow(number , 3)
+
+result = max(3,5,6,7)
+print(result)
+result = min(3,5,6,7)
+
+number = number % 2 #remainder
+
+number = number // 2 #floor division
+
+number = abs(number)
+
+number = math.sqrt(number) #square root 
+
+number = math.ceil(number) #round up a floating point number
+
+number = math.floor(number) #round down a floating point number
+
+number = round(number,2) #round a floating point number to the digit you give
+
+number = math.pi #pi
+number = math.e
+
+
+print(number)
+
+
+
+
+
+#------------Lists----------------
+
+
+
