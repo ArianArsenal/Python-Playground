@@ -6,7 +6,7 @@ credit_card = input("Enter Credit Card Number : ")
 credit_card = credit_card.replace("-", "")
 credit_card = credit_card.replace(" ","")
 
-if len(credit_card) != 16:
+if len(credit_card) != 16 and len(credit_card) != 19:
     print("Invalid Credit Card Number")
 else:
     if credit_card.isdigit() == False:
