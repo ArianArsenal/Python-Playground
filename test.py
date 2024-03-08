@@ -1,4 +1,5 @@
 import math
+import os
 
 #-------------Escape Sequences-------------------------
 
@@ -24,6 +25,8 @@ name = "John"
 
 state = True
 # boolean state = True; in Java
+
+#f string usage
 
 print(f"\nHey my name is {name} and im {age} years old\n") # f string
 
@@ -73,7 +76,35 @@ print(age)
 
 #-------String methods--------------
 
+
+#/@ Split method
 input = input("Enter Name :")
+
+input.split() #splits the string (a sentence )into a list of strings(list of words) by the given character (default is space)
+
+
+sentence = "This is a sample sentence"
+sentence.split(maxsplit=2) #splits the string by the given character and the maxsplit is the number of splits allowed
+
+
+
+#split string by index
+
+string = input("Enter a string : ")
+ind = int(input("Enter the index : "))
+#split the string by the index
+
+#first part
+first_part = string[:ind]
+#second part
+second_part = string[ind:]
+
+print(f"First part : {first_part}")
+print(f"Second part : {second_part}")
+
+
+
+
 
 lenght = len(input) #lenght of the string
 
@@ -132,10 +163,92 @@ last_name = name[-4:]
 print(last_name)
 
 #----------------------
+#exercise  : email slicer
+import os
+os.system("cls")
+
+email = input("Please Enter Your Email :")
+
+part = email.split("@")
+#the result returns a list of strings
+
+print(f"Username (pre @ ) : {part[0]}")
+
+provider = part[1].split(".")
+
+print(f"Provider (post @ ) : {provider[0]}")
+
+print(f"Domain (post . ) : {provider[1]}")
+
+#print(part[1])
+
+print("-------------------------")
+#all parts
+print(f"{part} {provider}")
+
+#we could use the index function for finding the @ too
 
 
 
 
+#----------------------
+#format specifiers
+
+# .(number)f = round to that many decimal places
+# :(number) = allocate that many spaces
+# :0(number) = allocate and zero pad that many spaces
+# :< = left justify
+# :> = right justify
+# :^ = center align
+# :+ = use a plus sign to indicate positive value
+# := = place sign to leftmost position
+# :  = insert a space before positive numbers
+# :, = comma separator
+# :% = percentage format
+
+number = 23.45656
+
+print(f"Your Number : {number:.2f}")
+print(f"Your Number : {number:10}")
+print(f"Your Number : {number:03}")
+
+
+
+#--------------------------------
+#while loop
+
+name = input("enter name : ")
+
+while name == "":
+    print("Enter sth bruh")
+    name = input("enter name : ")
+
+
+print(f"hello {name}")
+
+#---------------------------------
+#intrest calculator
+
+principle = 0
+rate = 0
+time = 0
+
+while principle <= 0:
+    principle = float(input("Enter Principle : "))
+    if principle <= 0:
+        print("Principle Can't be that")
+while rate <= 0:
+    rate = float(input("Enter Rate : "))
+    if rate <= 0:
+        print("Rate Can't be that")
+while time <= 0:
+    time = float(input("Enter Time : "))
+    if time <= 0:
+        print("Time Can't be that")
+
+interest = principle * pow((1 +  rate  / 100 ),time)
+
+print(f"Your Interest is {interest:.2f}$ after {time} years")
 
 
 
@@ -199,25 +312,32 @@ print(number)
 # <= #less than or equals to
 
 
-#-----Identity Operands--------
+#-----Object Identity Operands--------
 
 
-# is #checks if the two variables are the same
+# is is for checking if two variables in the memory refers to the same object
 
-# is not #checks if the two variables are not the same
+# is not is for checking if two variables in the memory refers to the different object
+
+
 
 
 #-----Membership Operands--------
 
 
-# in #checks if the value is in the list
+# in checks if the value is in the list
 
-# not in #checks if the value is not in the list
+# not in checks if the value is not in the list
 
 
 #-----Bitwise Operands-------
 
-
+# & performs a bitwise AND operation. on each bit
+# | performs a bitwise OR operation. on each bit
+# ^ performs a bitwise XOR (exclusive OR) operation. on each bit
+# ~ performs a bitwise NOT operation (inverts the bits). on each bit
+# << performs a bitwise left shift (shifts bits to the left).
+# >> performs a bitwise right shift (shifts bits to the right).
 
 
 #------------Colorful Terminal----------------
@@ -267,4 +387,48 @@ print(number)
 formatted_text = "\033[1;31;43mBold Red Text on Yellow Background\033[0m"
 print(formatted_text)
 
+#-------------------------
+#for loops 
 
+for i in range(1,11,3): #range function (start,stop,steps)
+    print(i)
+
+#count backward
+for counter in reversed(range(1,11)):
+    if counter == 4:
+        continue
+    print(counter)
+
+#iterate through a string
+test_string = "This is a Test String"
+
+for x in test_string:
+    if x == 'a' :
+        break
+    print(x)
+
+for y in range(1,11):
+    print(y,end="") #in print the end= specify how the print should end 
+#--------------------------
+import time
+
+print("1")
+
+time.sleep(3) # wait for 3 seconds
+
+print("2")
+
+#----------------------
+#&countdown timer
+
+import time,os
+user_time = int(input("Enter time in seconds: "))
+
+for x in range(user_time , 0 , -1):
+    seconds = x % 60
+    minutes = int(x/60) %60
+    hours = int(x/3600)
+    print(f"{hours:02d}:{minutes:02d}:{seconds:02d}")
+    time.sleep(1)
+    os.system("cls")
+    
