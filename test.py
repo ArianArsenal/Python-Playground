@@ -431,4 +431,425 @@ for x in range(user_time , 0 , -1):
     print(f"{hours:02d}:{minutes:02d}:{seconds:02d}")
     time.sleep(1)
     os.system("cls")
+
+print("Time's Up")
+
+#----------------------
+#Lists
+
+#list is a collection of items in a particular order
+
+#list is mutable
+
+#list can contain different types of data
+
+#list is defined by []
+
+#list can be accessed by index
+
+food = ["pizza","ghorme","doogh"]
+
+# for x in range(len(food)):
+#     print(food[x])
+
+
+food[0] = "kabab"
+print(food)
+
+food.append("kale pache")
+print(food)
+
+food.sort()
+print(food)
+
+food.remove("kale pache")
+print(food)
+
+food.pop(1)
+print(food)
+
+del food[0]
+print(food)
+
+food.clear()
+print(food)
+
+food = ["pizza","ghorme","doogh"]
+
+for x in food:
+    print(x)
+
+food.insert(1,"kabab")
+
+
+print(food.count("kabab"))
+
+
+food2 = food.copy()
+print(food2)
+
+food.extend(food2)
+print(food)
+
+food.reverse()
+print(food)
+
+food.sort(reverse=True)
+print(food)
+
+
+food = ["pizza","ghorme","doogh"]
+
+food.sort(key = str.lower)
+print(food)
+
+def myFunc(e):
+    return len(e)
+
+food.sort(key = myFunc)
+print(food)
+
+food.sort(reverse = True, key = myFunc)
+print(food)
+
+# food = ["pizza","ghorme","doogh"]
+
+# food.sort(reverse = True, key = lambda x: len(x))
+
+# print(food)
+
+# food = ["pizza","ghorme","doogh"]
+
+
+
+
+#----------------------
+#multi dimensional lists
+
+#list inside a list
+
+drinks = ["coffee","tea","juice"]
+foods = ["pizza","fries","hotdog"]
+desserts = ["cake","pie","cookie"]
+
+menu = [drinks,foods,desserts]
+
+print(menu)
+
+# for x in menu:
+#     for y in x:
+#         print(y)
+
+print(menu[1][1])
+
+#---------------------
+#tuples
+
+
+#tuples are immutable
+
+#tuples are defined by ()
+
+#tuples can contain different types of data
+
+#tuples can be accessed by index
+
+#tuples are ordered and faster than lists
+
+tuple = ("salam",8)
+
+print(tuple)
+
+print(tuple[0])
+
+tuple[0] = 1.5 #! not allowed because tuples are immutable (can't change them)
+
+print(tuple[0])
+
+for x in tuple:
+    print(x)
+
+print(tuple.count("salam"))
+print(tuple.index(8))
+
+
+#---------------------
+
+#sets
+
+#sets are unordered and unindexed
+#sets are defined by {}
+#sets can contain different types of data
+#sets are mutable
+#sets can't have duplicates
+#is faster than lists
+
+set = {"fork","spoon","knife"}
+
+print(set)
+
+for x in set:
+    print(x)
+
+set.add("arian")
+print(set)
+
+set.remove("arian") #if doesnt exist it throws an error
+print(set)
+
+
+set.update(["salam","arian","arian"])
+print(set)
+
+print(set.difference({"arian","salam"}))
+
+set.discard("arian") #if doesnt exist it doesnt throw an error
+print(set)
+
+
+
+
+#---------------------
+
+#dictionaries
+
+#dictionaries are unordered and mutable
+#dictionaries are defined by {}
+#dictionaries can contain different types of data
+#dictionaries are indexed by keys
+#dictionaries can't have duplicates
+#key-value (like hashmaps)
+#fast because it uses hashing
+
+capitals = {'IRAN':'Tehran',
+            'USA':'Washington',
+            'UK':'London',
+            'Russia':'Moscow'}
+
+print(capitals)
+
+print(capitals['IRAN']) #access by key but if the key doesnt exist it throws an error
+print(capitals.get('Germany')) #same as above but if the key doesnt exist it returns None not error
+
+print(capitals.keys())
+print(capitals.values())
+print(capitals.items())
+
+for key,value in capitals.items():
+    print(key,value)
+
+for value in capitals.values():
+    print(value)
+
+capitals.update({'Germany':'Berlin'})
+print(capitals)
+
+
+capitals['Germany'] = 'Bonn'
+print(capitals)
+
+capitals.pop('Germany') #removes the key and value
+print(capitals)
+
+
+capitals.clear()
+print(capitals)
+
+
+#---------------------
+#indexing for strings , lists , tuples
+
+# [start : stop : step]
+
+name = "Arian Mohseni"
+
+if(name[0].islower()):
+    print("yes")
+else:
+    print("no")
+
+first_name = name[:5]
+last_name = name[-7:]
+
+print(first_name , last_name)
+
+print(name[-13]== name[0]) #True
+
+print(name[0:]) #whole string
+print(name[::-1]) #reverse the string
+
+#---------------------
+#functions
+
+def function_name():
+    print("Hello World")
+
+
+function_name()
+
+for x in range(1,11):
+    function_name()
+
+
+def function_name_with_parameter(name):
+    print("Hello " + name)
+
+function_name_with_parameter("arian")
+
+#strings , integeres , floats , tuples are immutable so their original value wont be changed when passed to functions
+#call by object reference
+
+def function_changes(name):
+    name += "changed"
+    return name
+
+
+name = "arian"
+print(name)
+
+result = function_changes(name)
+
+print(name)
+print(result)
+
+def function_number(age):
+    print(type(age))
+
+function_number(21)
+
+
+def function_default(name = "arian"):
+    print(name)
+
+
+#---------------------
+
+#keyword arguments
+
+
+def function_keyword(name,age):
+
+    print(f"Name : {name} Age : {age}")
+
+
+function_keyword(age= 21,name= "arian")
+
+#---------------------
+
+#nested functions
+
+def outer_function():
+    print("Outer Function")
+
+    def inner_function():
+        print("Inner Function")
+
+    inner_function()
+
+outer_function()
+
+#---------------------
+
+#lambda functions
+
+#small anonymous functions
+
+#can take any number of arguments but only one expression
+
+#used for small functions
+
+#lambda arguments : expression
+
+x = lambda a : a + 10
+
+print(x(5))
+
+x = lambda a,b : a * b
+
+print(x(5,6))
+
+def myFunc(n):
+    return lambda a : a * n
+
+myDoubler = myFunc(2)
+
+print(myDoubler(11))
+
+#---------------------
+
+#args and kwargs
+
+#*args = parameter that will pack all arguments into a Tuple so that a function can accept a varying amount of positionl arguments
+
+
+
+def function_args(*args):
+    sum = 0
+
+    for i in args:
+        sum += i
+    return sum
+
+print(function_args(2,54,78,53,2,5,7))
+
+print(function_args(9.6,7))
+
+
+#**kwargs = parameter that will pack all arguments into a dictoinary so that a function can accept a varying amount of keyword arguemnts
+
+def example_kwargs(**kwargs):
+    for key, value in kwargs.items():
+        print(f"{key}: {value}")
+
+# Calling the function with keyword arguments
+example_kwargs(name="Alice", age=30, city="Wonderland")
+
+
+
+
+#all combined
+
+def example_combined(arg1, *args, **kwargs):
+    print("First argument:", arg1)
     
+    print("\nNon-keyword arguments:")
+    for arg in args:
+        print(arg)
+    
+    print("\nKeyword arguments:")
+    for key, value in kwargs.items():
+        print(f"{key}: {value}")
+
+# Calling the function with a mix of positional and keyword arguments
+example_combined(10, 20, 30, name="Alice", age=30, city="Wonderland")
+
+
+#---------------------
+#String format 
+
+var = "ali"
+name = "Arian"
+age = 20
+
+print("Hello My name is "+ name +"and im"+ age +" years old and"+ var +"is my friend") #beginner (not recommended because of the type casting and spaces between variables)
+
+print("Hello My name is {} and im {} years old and {} is my friend".format("Arian",20,var))#default
+
+print("Hello My name is {1} and im {2} years old and {0} is my friend".format("Arian",20,var)) #positional argument based
+
+print("Hello My name is {name} and im {age} years old and {friend} is my friend".format(name="Arian",age=20,friend=var)) #keyword argument based
+
+print(f"Hello My name is {name} and im {age} years old and {var} is my friend") #f string
+
+text = "Hello My name is {name} and im {age} years old and {friend} is my friend"
+print(text.format(name="Arian",age=20,friend=var)) #format string
+
+
+name = "Arian"
+
+print("Hello, my name is {} nice to meet you".format(name)) #default
+print("Hello, my name is {:10} nice to meet you".format(name)) #allocate 10 spaces
+
+
+
+#---------------------
